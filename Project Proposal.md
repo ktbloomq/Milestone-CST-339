@@ -11,6 +11,11 @@ Our team is looking to develop a new e-commerce website to sell products online.
 - Implement the ability to creating users
 - Create a login module
 
+## Features:
+- search products
+- add to cart
+- checkout
+
 ## Target Audience: 
 Our target audience is primarily teens and young adults aged 18-35 who are interested in purchasing trendy and stylish products online. They are tech-savvy and expect a seamless online shopping experience.
 
