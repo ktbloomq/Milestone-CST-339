@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+  body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type=text],
+  input[type=password] {
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    width: calc(100% - 25px);
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Styles for the top navigation bar */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #4CAF50;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav li.right {
+  margin-left: auto;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+</style>
+  </head>
+  <header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Support</a></li>
+	  <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+  <body>
+    <h1>Login</h1>
+    <form name="login" method="post" action="">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <input type="submit" value="Login">
+    </form>
+  </body>
+</html>
