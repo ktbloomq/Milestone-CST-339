@@ -2,100 +2,8 @@
 <html>
   <head>
     <title>Login Page</title>
-    <style>
-  body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    color: #333;
-    text-align: center;
-  }
-  
-  form {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    margin: 50px auto;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  input[type=text],
-  input[type=password] {
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px;
-    width: calc(100% - 25px);
-  }
-  
-  input[type=submit] {
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #3e8e41;
-  }
-  
-  /* Styles for the top navigation bar */
-header {
-  position: sticky;
-  top: 0;
-  background-color: #4CAF50;
-}
-
-nav {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav li {
-  margin: 0 10px;
-}
-
-nav li.right {
-  margin-left: auto;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ddd;
-}
-</style>
+	<link rel="stylesheet" href="styles.css">
+	<script src="main.js"></script>
   </head>
   <header>
   <nav>
@@ -109,13 +17,57 @@ nav a:hover {
   </nav>
 </header>
   <body>
-    <h1>Login</h1>
-    <form name="login" method="post" action="">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br><br>
-      <input type="submit" value="Login">
+  
+    <form class="form form_hidden" id="login">
+		<h1 class="form_title">Login</h1>
+		<div class="form_message form_message-error"></div>
+		<div class="form_input-group">
+			<input type="text" class="form_input" placeholder="Username" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+	  
+	  <div class="form_input-group">
+			<input type="password" class="form_input " placeholder="Password" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+		
+		<input type="submit" class="form_button" value="Login">
+		
+		<p class="form_text">
+			<a href="#" class="form_link">Forgot your password?</a>
+		</p>
+		<p class="form_text">
+			<a class="form_link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+		</p>
     </form>
+	
+	<form class="form" id="createAccount">
+		<h1 class="form_title">Create Account</h1>
+		<div class="form_message form_message-error"></div>
+		<div class="form_input-group">
+			<input type="text" class="form_input" placeholder="Username" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+		<div class="form_input-group">
+			<input type="text" class="form_input" placeholder="Email Address" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+	  
+	  <div class="form_input-group">
+			<input type="password" class="form_input " placeholder="Password" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+		<div class="form_input-group">
+			<input type="password" class="form_input " placeholder="Confirm password" required><br><br>
+			<div class="form_input-error-message"></div>
+		</div>
+		
+		<input type="submit" class="form_button" value="Login">
+		
+		<p class="form_text">
+			<a class="form_link" href="./" id="linkLogin">Already have an account? Sign in</a>
+		</p>
+    </form>
+	
   </body>
 </html>
