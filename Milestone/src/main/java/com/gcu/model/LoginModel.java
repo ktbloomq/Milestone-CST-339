@@ -5,12 +5,12 @@ import jakarta.validation.constraints.Size;
 
 public class LoginModel {
 
-    // @NotNull
-    // @Size(min = 1, max = 32)
+    @NotNull(message = "enter email")
+    @Size(max = 32, message = "email is too long")
     private String email;
 
-    // @NotNull
-    // @Size(min = 1, max = 32)
+    @NotNull(message = "enter password")
+    @Size(min = 10, max = 32, message = "password must be between 10 and 32 characters")
     private String password;
 
     public String getEmail() {
