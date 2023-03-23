@@ -30,6 +30,7 @@ public class Login_Controller {
     @PostMapping("/doLogin")
     public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
 
+        System.out.printf("username: %s password: %s", loginModel.getUsername(), loginModel.getPassword());
         if(bindingResult.hasErrors()) {
             model.addAttribute("title", "Login Form");
             return "login";
