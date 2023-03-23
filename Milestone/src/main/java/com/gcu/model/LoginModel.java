@@ -5,19 +5,19 @@ import jakarta.validation.constraints.Size;
 
 public class LoginModel {
 
-    @NotNull
-    @Size(min = 1, max = 32)
-    private String username;
+    // @NotNull
+    // @Size(min = 1, max = 32)
+    private String email;
 
-    @NotNull
-    @Size(min = 1, max = 32)
+    // @NotNull
+    // @Size(min = 1, max = 32)
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
-    public void setUsername (String username) {
-        this.username = username;
+    public void setEmail (String username) {
+        this.email = username;
     }
 
     public String getPassword() {
