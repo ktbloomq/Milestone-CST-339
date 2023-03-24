@@ -26,6 +26,8 @@ public class Login_Controller {
         model.addAttribute("loginModel", new LoginModel());
         return "login";
     }
+    
+    
 
     @PostMapping("/doLogin")
     public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
@@ -47,4 +49,6 @@ public class Login_Controller {
         model.addAttribute("orders", orders);
         return "orders";
     }
+    
+    
 }
