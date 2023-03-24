@@ -1,8 +1,5 @@
 package com.gcu.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,8 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gcu.model.LoginModel;
-import com.gcu.model.OrderModel;
+import com.gcu.model.RegisterModel;
 
 import jakarta.validation.Valid;
 
@@ -21,18 +17,18 @@ public class Registration_Controller {
     @GetMapping("/")
     public String display(Model model) {
         model.addAttribute("title", "Registration");
-        model.addAttribute("loginModel", new LoginModel());
+        model.addAttribute("registerModel", new RegisterModel());
         return "registration";
     }
     
     @PostMapping("/doRegistration")
-    public String doRegistration(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
+    public String doRegistration(@Valid RegisterModel registerModel, BindingResult bindingResult, Model model) {
 
         //System.out.printf("username: %s password: %s%n", loginModel.getEmail(), loginModel.getPassword());
         if(bindingResult.hasErrors()) {
             model.addAttribute("title", "Registration Form");
             return "registration";
         }
-        return "login";
+        return "home";
     }
 }
