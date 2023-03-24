@@ -29,6 +29,6 @@ public class Registration_Controller {
             model.addAttribute("title", "Registration Form");
             return "registration";
         }
-        return "home";
+        return "redirect:/login/";
     }
 }
