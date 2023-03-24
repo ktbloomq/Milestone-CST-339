@@ -7,7 +7,7 @@
 <body>
 	<div layout:fragment="content">
     	<form action="#" th:action="@{doRegistration}" th:object="${registerModel}" method="post" style="max-width: 330px; padding: 15px;" class="m-auto">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Register</h1>
             <input th:field="*{firstName}" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
             <input th:field="*{lastName}" type="text" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
             <input th:field="*{email}" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
