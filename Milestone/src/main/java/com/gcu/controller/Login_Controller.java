@@ -20,6 +20,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequestMapping("/login")
 public class Login_Controller {
 
+	/**
+	 * LoginController that returns a view along with a Model Attribute
+	 * @param model Model to bind to the view
+	 * 
+	 * @return View name login
+	 */
     @GetMapping("/")
     public String display(Model model) {
         model.addAttribute("title", "Login Form");
@@ -27,8 +33,15 @@ public class Login_Controller {
         return "login";
     }
     
-    
-
+    /**
+     * Handles the login form submission and redirects the user to the orders page if successful.
+     *
+     * @param loginModel the login form model containing user input data
+     * @param bindingResult the result of the validation process for the registration form model
+     * @param model the Spring MVC model object used to pass data to the view
+     * 
+     * @return  view name orders
+     */
     @PostMapping("/doLogin")
     public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
 
