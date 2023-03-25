@@ -19,6 +19,14 @@ public class RegisterModel {
     @NotNull(message = "enter password")
     @Size(min = 10, max = 32, message = "password must be between 10 and 32 characters")
     private String password;
+    
+    @NotNull(message = "enter address")
+    @Size(min = 1, max = 64, message = "address must be between 1 and 64 characters")
+    private String address;
+    
+    @NotNull(message = "enter phone")
+    @Size(min = 1, max = 64, message = "phone number must be between 10 and 11 characters")
+    private String phone;
 
     public String getFirstName() {
         return firstName;
@@ -50,6 +58,22 @@ public class RegisterModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     

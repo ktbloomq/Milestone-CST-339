@@ -24,7 +24,7 @@ public class Registration_Controller {
     @PostMapping("/doRegistration")
     public String doRegistration(@Valid RegisterModel registerModel, BindingResult bindingResult, Model model) {
 
-        //System.out.printf("username: %s password: %s%n", loginModel.getEmail(), loginModel.getPassword());
+    	System.out.printf("First Name: %s Last Name: %s Phone Num: %s Address: %s Email: %s Password: %s%n", registerModel.getFirstName(), registerModel.getLastName(), registerModel.getPhone(), registerModel.getAddress(), registerModel.getEmail(), registerModel.getPassword());
         if(bindingResult.hasErrors()) {
             model.addAttribute("title", "Registration Form");
             return "registration";
