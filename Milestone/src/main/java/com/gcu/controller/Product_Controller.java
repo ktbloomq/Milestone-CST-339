@@ -19,7 +19,7 @@ public class Product_Controller {
     public String display(Model model) {
         model.addAttribute("title", "Products");
         model.addAttribute("orderModel", new OrderModel());
-        return "products";
+        return "new_products";
     }
     
     @PostMapping("/createItem")
@@ -29,6 +29,6 @@ public class Product_Controller {
        
         
         model.addAttribute("title", "Products");
-        return "products";
+        return "new_products";
     }
 }
