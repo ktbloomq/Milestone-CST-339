@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.OrdersBusinessServiceInterface;
+import com.gcu.business.ProductsBusinessService;
 import com.gcu.model.LoginModel;
 import com.gcu.model.OrderModel;
+import com.gcu.model.ProductModel;
 
 import jakarta.validation.Valid;
 
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class Login_Controller {
 
     @Autowired 
-    private OrdersBusinessServiceInterface service;
+    private ProductsBusinessService service;
 
 	/**
 	 * LoginController that returns a view along with a Model Attribute
@@ -55,11 +57,18 @@ public class Login_Controller {
             return "login";
         }
 
-        List<OrderModel> orders = service.getOrders();
+        List<ProductModel> products = service.getProducts();
+        // List<ProductModel> products = null;
+        model.addAttribute("title", "My Products");
+        model.addAttribute("products", products);
+
+        return "products";
+
+        // List<OrderModel> orders = service.getOrders();
         
-        model.addAttribute("title", "My Orders");
-        model.addAttribute("orders", orders);
-        return "orders";
+        // model.addAttribute("title", "My Orders");
+        // model.addAttribute("orders", orders);
+        // return "orders";
     }
     
     
