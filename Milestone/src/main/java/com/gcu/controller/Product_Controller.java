@@ -24,7 +24,7 @@ public class Product_Controller {
     @Autowired 
     private ProductsBusinessService service;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String productsPage(Model model) {
         List<ProductModel> products = service.getProducts();
         model.addAttribute("title", "Products");
@@ -42,10 +42,10 @@ public class Product_Controller {
     @PostMapping("/createItem")
     public String createItem(ProductModel productModel, Model model) {
 
-        System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
+        System.out.printf("id:%d name:%s price:$%.2f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
        
         
         model.addAttribute("title", "Products");
-        return "products";
+        return "redirect:/products";
     }
 }
