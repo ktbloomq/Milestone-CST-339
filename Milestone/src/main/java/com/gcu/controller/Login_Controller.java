@@ -56,7 +56,6 @@ public class Login_Controller {
         }
 
         List<ProductModel> products = service.getProducts();
-        // List<ProductModel> products = null;
         model.addAttribute("title", "My Products");
         model.addAttribute("products", products);
 
