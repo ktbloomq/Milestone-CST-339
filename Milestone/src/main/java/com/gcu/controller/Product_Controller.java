@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.ProductsBusinessService;
-import com.gcu.model.OrderModel;
 import com.gcu.model.ProductModel;
 
 import jakarta.validation.Valid;
@@ -43,7 +42,7 @@ public class Product_Controller {
     @PostMapping("/createItem")
     public String createItem(ProductModel productModel, Model model) {
 
-        System.out.printf("");
+        System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
        
         
         model.addAttribute("title", "Products");
