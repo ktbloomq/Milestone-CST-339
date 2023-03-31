@@ -14,7 +14,11 @@ public class OrderModel {
         this.quantity = quantity;
     }
 
-    public long getId() {
+    public OrderModel() {
+		
+	}
+
+	public long getId() {
         return id;
     }
     public void setId(long id) {
@@ -44,5 +48,4 @@ public class OrderModel {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
 }
