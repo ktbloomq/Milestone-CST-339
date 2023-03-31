@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Home</title>
+</head>
+<body>
+     <div layout:fragment="content">
+        <form action="#" th:action="@{createItem}" th:object="${orderModel}" method="post" style="max-width: 330px; padding: 15px;" class="m-auto">
+              <input th:field="*{productName}" type="text" id="inputText" class="form-control" placeholder="Product Name" style="margin:0.5rem 0rem" required autofocus>
+              <input th:field="*{price}" type="text" id="inputPrice" class="form-control" placeholder="Price" style="margin:0.5rem 0rem" required autofocus>
+              <input th:field="*{quantity}" type="text" id="inputQuantity" class="form-control" placeholder="Quantitys" style="margin:0.5rem 0rem" required autofocus Value=" ">
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Create Product</button>
+        </form>
+      </div>
+</body>
+</html>
