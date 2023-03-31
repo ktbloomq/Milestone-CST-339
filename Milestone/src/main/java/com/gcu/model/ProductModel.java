@@ -5,6 +5,10 @@ public class ProductModel {
     private String name;
     private float price;
 
+    public ProductModel() {
+        
+    }
+
     public ProductModel(long id, String name, float price) {
         this.id = id;
         this.name = name;

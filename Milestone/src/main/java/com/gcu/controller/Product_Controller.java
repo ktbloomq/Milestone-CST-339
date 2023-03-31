@@ -35,12 +35,13 @@ public class Product_Controller {
 
     @GetMapping("/newItem")
     public String display(Model model) {
+        model.addAttribute("productModel", new ProductModel());
         model.addAttribute("title", "Products");
         return "new_products";
     }
     
     @PostMapping("/createItem")
-    public String createItem(OrderModel orderModel, Model model) {
+    public String createItem(ProductModel productModel, Model model) {
 
         System.out.printf("");
        
