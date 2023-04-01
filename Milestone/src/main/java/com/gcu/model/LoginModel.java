@@ -27,4 +27,19 @@ public class LoginModel {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+  //Authenticate user is in db
+    public boolean authenticate() 
+    {
+    	if(getEmail().equals("example@example.com") && getPassword().equals("password123")) 
+    	{
+    		System.out.println("Successfully authenticated");
+    		return true;
+    	}
+    	else {
+    		System.out.println("No existing users found");
+    		return false;
+    	}
+		
+    }
 }
