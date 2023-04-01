@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gcu.business.ProductsBusinessService;
 import com.gcu.model.LoginModel;
 import com.gcu.model.ProductModel;
+import com.gcu.model.RegisterModel;
 
 import jakarta.validation.Valid;
 
@@ -54,7 +55,13 @@ public class Login_Controller {
             model.addAttribute("title", "Login Form");
             return "login";
         }
-
+        
+        //Authenticate User
+        if(!service.authenticate(loginModel)) {
+            model.addAttribute("title", "Login Form");
+            return "login";
+        }
+        
         List<ProductModel> products = service.getProducts();
         model.addAttribute("title", "My Products");
         model.addAttribute("products", products);
@@ -67,6 +74,7 @@ public class Login_Controller {
         // model.addAttribute("orders", orders);
         // return "orders";
     }
+    
     
     
 }
