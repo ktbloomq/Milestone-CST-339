@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gcu.business.ProductsBusinessService;
 import com.gcu.model.LoginModel;
 import com.gcu.model.ProductModel;
-import com.gcu.model.RegisterModel;
 
 import jakarta.validation.Valid;
 

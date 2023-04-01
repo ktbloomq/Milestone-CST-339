@@ -14,8 +14,6 @@ import com.gcu.business.ProductsBusinessService;
 import com.gcu.model.ProductModel;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 @RequestMapping("/products")

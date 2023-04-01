@@ -3,7 +3,6 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gcu.model.LoginModel;
 import com.gcu.model.ProductModel;
 
 public class ProductsBusinessService {
