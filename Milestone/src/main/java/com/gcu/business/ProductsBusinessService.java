@@ -29,20 +29,7 @@ public class ProductsBusinessService {
         System.out.println("Destroying ProductsBusinessService :(");
     }
     
-  //Authenticate user is in db
-    public boolean authenticate(LoginModel lg) 
-    {
-    	if( lg.getEmail().equals("example@example.com") && lg.getPassword().equals("password123")) 
-    	{
-    		System.out.println("Successfully authenticated");
-    		return true;
-    	}
-    	else {
-    		System.out.println("No existing users found");
-    		return false;
-    	}
-		
-    }
+  
     
     
 }

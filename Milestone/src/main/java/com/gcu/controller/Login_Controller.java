@@ -57,7 +57,7 @@ public class Login_Controller {
         }
         
         //Authenticate User
-        if(!service.authenticate(loginModel)) {
+        if(!loginModel.authenticate()) {
             model.addAttribute("title", "Login Form");
             return "login";
         }
