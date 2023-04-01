@@ -1,36 +1,46 @@
 package com.gcu.model;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class ProductModel {
-    private long id;
-    private String name;
-    private float price;
+    @NotNull(message = "Enter product id")
+    private int Id;
+
+    @NotNull(message = "Enter product name")
+    @Size(max = 50, message = "product name is too long")
+    private String Name;
+
+    @NotNull(message = "Enter product price")
+    private float Price;
 
     public ProductModel() {
         
     }
 
-    public ProductModel(long id, String name, float price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
+    public ProductModel(int id, String name, float price) {
+        this.Id = id;
+        this.Name = name;
+        this.Price = price;
     }
 
-    public long getId() {
-        return id;
+    
+    public int getId() {
+        return Id;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setId(int id) {
+        this.Id = id;
     }
     public String getName() {
-        return name;
+        return Name;
     }
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
     public float getPrice() {
-        return price;
+        return Price;
     }
     public void setPrice(float price) {
-        this.price = price;
+        this.Price = price;
     }    
 }

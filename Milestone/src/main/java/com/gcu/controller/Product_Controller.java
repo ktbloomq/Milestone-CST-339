@@ -40,8 +40,11 @@ public class Product_Controller {
     }
     
     @PostMapping("/createItem")
-    public String createItem(ProductModel productModel, Model model) {
-
+    public String createItem(@Valid ProductModel productModel, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()) {
+            model.addAttribute("title", "Product Creation Form");
+            return "new_products";
+        }
         System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
        
         
