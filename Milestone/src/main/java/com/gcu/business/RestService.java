@@ -16,7 +16,7 @@ import com.gcu.model.ProductModel;
 
 @RestController
 @RequestMapping("/service")
-public class ProductsRestService {
+public class RestService {
 
     @Autowired
     private ProductsBusinessService productsService;
@@ -41,7 +41,7 @@ public class ProductsRestService {
     //     return list;
     // }
 
-    @PostMapping(path="/add")
+    @PostMapping(path="/addProduct")
     public ProductModel addProduct(@RequestBody ProductModel product) {
         System.out.printf("id:%d name:%s price:$%f%n", product.getId(), product.getName(), product.getPrice());
         return product;
