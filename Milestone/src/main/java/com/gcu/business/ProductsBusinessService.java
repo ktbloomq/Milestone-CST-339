@@ -3,21 +3,30 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.gcu.data.ProductsDataSevice;
+import com.gcu.data.entity.ProductEntity;
 import com.gcu.model.ProductModel;
 
 public class ProductsBusinessService {
+
+    @Autowired
+    private ProductsDataSevice service;
 
     public void test() {
         System.out.println("Hello from the OrdersBusinessService");
     }
 
     public List<ProductModel> getProducts() {
-        List<ProductModel> products = new ArrayList<ProductModel>();
-        products.add(new ProductModel(0, "Pixel 3a", 300));
-        products.add(new ProductModel(1, "Pixel 4a", 400));
-        products.add(new ProductModel(2, "Pixel 5a", 500));
-        products.add(new ProductModel(3, "Pixel 6a", 600));
-        return products;
+        List<ProductEntity> productsEntity = service.findAll();
+        List<ProductModel> productsDomain = new ArrayList<ProductModel>();
+        for (ProductEntity entity : productsEntity) {
+            productsDomain.add(new ProductModel(entity.getId(),
+                                              entity.getName(),
+                                              entity.getPrice()));
+        }
+        return productsDomain;
     }
 
     public void init() {
