@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gcu.model.OrderModel;
 // import com.gcu.model.ProductList;
 import com.gcu.model.ProductModel;
 
@@ -18,11 +19,19 @@ import com.gcu.model.ProductModel;
 public class ProductsRestService {
 
     @Autowired
-    private ProductsBusinessService service;
+    private ProductsBusinessService productsService;
 
-    @GetMapping(path="/getjson", produces={MediaType.APPLICATION_JSON_VALUE})
-    public List<ProductModel> getOrdersAsJson() {
-        return service.getProducts();
+    @Autowired
+    private OrdersBusinessService ordersService;
+
+    @GetMapping(path="/getproducts", produces={MediaType.APPLICATION_JSON_VALUE})
+    public List<ProductModel> getProductsAsJson() {
+        return productsService.getProducts();
+    }
+
+    @GetMapping(path="/getorders", produces={MediaType.APPLICATION_JSON_VALUE})
+    public List<OrderModel> getOrdersAsJson() {
+        return ordersService.getOrders();
     }
 
     // @GetMapping(path="/getxml", produces={MediaType.APPLICATION_XML_VALUE})

@@ -3,32 +3,38 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.gcu.data.OrdersDataSevice;
+import com.gcu.data.entity.OrderEntity;
 import com.gcu.model.OrderModel;
 
-public class OrdersBusinessService implements OrdersBusinessServiceInterface {
+public class OrdersBusinessService {
 
-    @Override
+    @Autowired
+    private OrdersDataSevice service;
+
     public void test() {
         System.out.println("Hello from the OrdersBusinessService");
     }
 
-    @Override
     public List<OrderModel> getOrders() {
-        List<OrderModel> orders = new ArrayList<OrderModel>();
-        orders.add(new OrderModel(0L, "0001", "Product 1", 1.00f, 1));
-        orders.add(new OrderModel(1L, "0002", "Product 2", 2.00f, 2));
-        orders.add(new OrderModel(2L, "0003", "Product 3", 3.00f, 3));
-        orders.add(new OrderModel(3L, "0004", "Product 4", 4.00f, 4));
-        orders.add(new OrderModel(5L, "0005", "Product 5", 5.00f, 5));
-        return orders;
+        List<OrderEntity> ordersEntity = service.findAll();
+        List<OrderModel> ordersDomain = new ArrayList<OrderModel>();
+        for (OrderEntity entity : ordersEntity) {
+            ordersDomain.add(new OrderModel(entity.getId(), 
+                                           entity.getOrderNo(), 
+                                           entity.getProductName(), 
+                                           entity.getPrice(), 
+                                           entity.getQuantity()));
+        }
+        return ordersDomain;
     }
 
-    @Override
     public void init() {
         System.out.println("Initializing OrdersBusinessService :)");
     }
 
-    @Override
     public void destroy() {
         System.out.println("Destroying OrdersBusinessService :(");
     }
