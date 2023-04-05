@@ -19,6 +19,7 @@ public class ProductsBusinessService {
     }
 
     public List<ProductModel> getProducts() {
+        // service.create(new ProductEntity("example", 70.1f));
         List<ProductEntity> productsEntity = service.findAll();
         List<ProductModel> productsDomain = new ArrayList<ProductModel>();
         for (ProductEntity entity : productsEntity) {
@@ -27,6 +28,10 @@ public class ProductsBusinessService {
                                               entity.getPrice()));
         }
         return productsDomain;
+    }
+
+    public boolean addProduct(ProductEntity product) {
+        return service.create(product);
     }
 
     public void init() {

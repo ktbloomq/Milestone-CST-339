@@ -20,6 +20,11 @@ public class ProductEntity {
         
     }
 
+    public ProductEntity(String name, float price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public ProductEntity(long id, String name, float price) {
         this.id = id;
         this.name = name;

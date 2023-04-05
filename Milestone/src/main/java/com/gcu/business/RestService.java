@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gcu.data.entity.OrderEntity;
+import com.gcu.data.entity.ProductEntity;
 import com.gcu.model.OrderModel;
 // import com.gcu.model.ProductList;
 import com.gcu.model.ProductModel;
@@ -44,6 +46,20 @@ public class RestService {
     @PostMapping(path="/addProduct")
     public ProductModel addProduct(@RequestBody ProductModel product) {
         System.out.printf("id:%d name:%s price:$%f%n", product.getId(), product.getName(), product.getPrice());
-        return product;
+        boolean isSuccess = productsService.addProduct(new ProductEntity(product.getName(), product.getPrice()));
+        if(isSuccess) {
+            return product;
+        }
+        return null;
+    }
+
+    @PostMapping(path="/addOrder")
+    public OrderModel addOrder(@RequestBody OrderModel order) {
+        System.out.printf("id:%d name:%s price:$%f%n", order.getId(), order.getProductName(), order.getPrice());
+        boolean isSuccess = ordersService.addOrder(new OrderEntity(order.getOrderNo(), order.getProductName(), order.getPrice(), order.getQuantity()));
+        if(isSuccess) {
+            return order;
+        }
+        return null;
     }
 }

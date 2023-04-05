@@ -12,7 +12,7 @@ public class ProductRowMapper implements RowMapper<ProductEntity> {
     @Override
     public ProductEntity mapRow(ResultSet rs, int rowNumber) throws SQLException {
         return new ProductEntity(rs.getLong("ID"),
-                              rs.getString("NAME"),
-                              rs.getFloat("PRICE"));
+                                rs.getString("NAME"),
+                                rs.getFloat("PRICE"));
     }
 }

@@ -30,6 +30,13 @@ public class OrderEntity {
 
     }
 
+    public OrderEntity(String orderNo, String productName, float price, int quantity) {
+        this.orderNo = orderNo;
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public OrderEntity(long id, String orderNo, String productName, float price, int quantity) {
         this.id = id;
         this.orderNo = orderNo;

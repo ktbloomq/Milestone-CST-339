@@ -19,6 +19,7 @@ public class OrdersBusinessService {
     }
 
     public List<OrderModel> getOrders() {
+        // service.create(new OrderEntity("example", "example", 70.0f, 10));
         List<OrderEntity> ordersEntity = service.findAll();
         List<OrderModel> ordersDomain = new ArrayList<OrderModel>();
         for (OrderEntity entity : ordersEntity) {
@@ -29,6 +30,10 @@ public class OrdersBusinessService {
                                            entity.getQuantity()));
         }
         return ordersDomain;
+    }
+
+    public boolean addOrder(OrderEntity order) {
+        return service.create(order);
     }
 
     public void init() {
