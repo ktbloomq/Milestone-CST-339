@@ -26,12 +26,12 @@ public class RestService {
     @Autowired
     private OrdersBusinessService ordersService;
 
-    @GetMapping(path="/getproducts", produces={MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path="/getProducts", produces={MediaType.APPLICATION_JSON_VALUE})
     public List<ProductModel> getProductsAsJson() {
         return productsService.getProducts();
     }
 
-    @GetMapping(path="/getorders", produces={MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path="/getOrders", produces={MediaType.APPLICATION_JSON_VALUE})
     public List<OrderModel> getOrdersAsJson() {
         return ordersService.getOrders();
     }
