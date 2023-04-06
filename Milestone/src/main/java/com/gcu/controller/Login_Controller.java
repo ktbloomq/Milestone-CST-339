@@ -1,4 +1,5 @@
 package com.gcu.controller;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,10 +57,15 @@ public class Login_Controller {
         }
         
         //Authenticate User
-        if(!loginModel.authenticate()) {
-            model.addAttribute("title", "Login Form");
-            return "login";
-        }
+        try {
+			if(!loginModel.authenticate()) {
+			    model.addAttribute("title", "Login Form");
+			    return "login";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
         List<ProductModel> products = service.getProducts();
         model.addAttribute("title", "My Products");
