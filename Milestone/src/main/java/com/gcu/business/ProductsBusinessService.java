@@ -24,8 +24,8 @@ public class ProductsBusinessService {
         List<ProductModel> productsDomain = new ArrayList<ProductModel>();
         for (ProductEntity entity : productsEntity) {
             productsDomain.add(new ProductModel(entity.getId(),
-                                              entity.getName(),
-                                              entity.getPrice()));
+                                                entity.getName(),
+                                                entity.getPrice()));
         }
         return productsDomain;
     }

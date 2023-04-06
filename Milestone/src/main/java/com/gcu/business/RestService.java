@@ -15,6 +15,7 @@ import com.gcu.data.entity.ProductEntity;
 import com.gcu.model.OrderModel;
 // import com.gcu.model.ProductList;
 import com.gcu.model.ProductModel;
+import com.gcu.model.RegisterModel;
 
 @RestController
 @RequestMapping("/service")
@@ -62,4 +63,9 @@ public class RestService {
         }
         return null;
     }
+
+    // @PostMapping(path="/addCustomer")
+    // public void addCustomer(@RequestBody RegisterModel customer) {
+    //      customersService.addCustomer(new CustomerEntity(customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPassword(), null, null))
+    // }
 }

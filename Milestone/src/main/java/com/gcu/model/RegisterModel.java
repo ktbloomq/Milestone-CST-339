@@ -19,6 +19,10 @@ public class RegisterModel {
     @NotNull(message = "enter password")
     @Size(min = 10, max = 32, message = "password must be between 10 and 32 characters")
     private String password;
+
+    @NotNull(message = "enter password")
+    @Size(min = 10, max = 32, message = "password must be between 10 and 32 characters")
+    private String confirmPassword;
     
     @NotNull(message = "enter address")
     @Size(min = 1, max = 64, message = "address must be between 1 and 64 characters")
@@ -54,6 +58,14 @@ public class RegisterModel {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
     public void setPassword(String password) {

@@ -1,30 +1,21 @@
 package com.gcu.business;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gcu.model.RegisterModel;
+import com.gcu.data.CustomersDataSevice;
+import com.gcu.data.entity.CustomerEntity;
 
 @Service
-public class RegistrationService implements RegistrationServiceInterface
-{
+public class RegistrationService {
 	
-	@Override
-	public RegisterModel register(RegisterModel registerModel) {
+	@Autowired
+	CustomersDataSevice service;
+
+	public CustomerEntity register(CustomerEntity customer) {
 		//Add registerModel to database
+		service.create(customer);
 		System.out.println("Successfully registered");
 		return null;
 	}
-
-	@Override
-	public void init() {
-		System.out.println("Hello from init registration");
-		
-	}
-
-	@Override
-	public void destroy() {
-		System.out.println("Hello from destroy registration");
-		
-	}
-
 }
