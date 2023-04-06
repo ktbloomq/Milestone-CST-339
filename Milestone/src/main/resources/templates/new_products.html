@@ -8,10 +8,6 @@
      <div layout:fragment="content">
             <form action="#" th:action="@{createItem}" th:object="${productModel}" method="post" style="max-width: 330px; padding: 15px;" class="m-auto">
                   <div class="form-floating">
-                        <input th:field="*{id}" type="number" min="0" id="inputID" class="form-control" placeholder="Product ID" style="margin:0.5rem 0rem" required autofocus>
-                        <label for="inputID">Product ID</label>
-                  </div>
-                  <div class="form-floating">
                         <input th:field="*{name}" type="text" id="inputName" class="form-control" placeholder="Product Name" style="margin:0.5rem 0rem" required>
                         <label for="inputName">Name</label>
                   </div>
