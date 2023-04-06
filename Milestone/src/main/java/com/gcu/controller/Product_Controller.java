@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.ProductsBusinessService;
+import com.gcu.data.entity.ProductEntity;
 import com.gcu.model.ProductModel;
 
 import jakarta.validation.Valid;
@@ -44,7 +45,7 @@ public class Product_Controller {
             return "new_products";
         }
         System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
-       
+        service.addProduct(new ProductEntity(productModel.getName(), productModel.getPrice()));
         
         model.addAttribute("title", "Products");
         return "redirect:/products";
