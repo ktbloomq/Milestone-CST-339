@@ -56,5 +56,13 @@ public class ProductsDataSevice implements DataAccessInterface<ProductEntity> {
     public boolean delete(ProductEntity t) {
         return true;
     }
+
+    public boolean existsById(long id) {
+        return productsRepository.existsById(id);
+    }
+
+    public void deleteById(long id) {
+        productsRepository.deleteById(id);
+    }
     
 }

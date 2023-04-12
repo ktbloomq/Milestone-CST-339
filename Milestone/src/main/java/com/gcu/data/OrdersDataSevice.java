@@ -56,5 +56,13 @@ public class OrdersDataSevice implements DataAccessInterface<OrderEntity> {
     public boolean delete(OrderEntity t) {
         return true;
     }
+
+    public boolean existsById(long id) {
+        return ordersRepository.existsById(id);
+    }
+
+    public void deleteById(long id) {
+        ordersRepository.deleteById(id);
+    }
     
 }

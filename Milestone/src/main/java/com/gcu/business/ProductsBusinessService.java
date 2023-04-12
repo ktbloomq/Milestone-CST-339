@@ -41,6 +41,14 @@ public class ProductsBusinessService {
     public void destroy() {
         System.out.println("Destroying ProductsBusinessService :(");
     }
+
+    public boolean exists(long id) {
+        return service.existsById(id);
+    }
+
+    public void deleteProduct(long id) {
+        service.deleteById(id);
+    }
     
   
     
