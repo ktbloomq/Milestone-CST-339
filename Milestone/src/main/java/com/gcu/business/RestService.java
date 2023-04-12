@@ -15,7 +15,6 @@ import com.gcu.data.entity.ProductEntity;
 import com.gcu.model.OrderModel;
 // import com.gcu.model.ProductList;
 import com.gcu.model.ProductModel;
-import com.gcu.model.RegisterModel;
 
 @RestController
 @RequestMapping("/service")
@@ -27,12 +26,12 @@ public class RestService {
     @Autowired
     private OrdersBusinessService ordersService;
 
-    @GetMapping(path="/getProducts", produces={MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path="/getproducts", produces={MediaType.APPLICATION_JSON_VALUE})
     public List<ProductModel> getProductsAsJson() {
         return productsService.getProducts();
     }
 
-    @GetMapping(path="/getOrders", produces={MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path="/getorders", produces={MediaType.APPLICATION_JSON_VALUE})
     public List<OrderModel> getOrdersAsJson() {
         return ordersService.getOrders();
     }
@@ -44,7 +43,7 @@ public class RestService {
     //     return list;
     // }
 
-    @PostMapping(path="/addProduct")
+    @PostMapping(path="/addproduct")
     public ProductModel addProduct(@RequestBody ProductModel product) {
         System.out.printf("id:%d name:%s price:$%f%n", product.getId(), product.getName(), product.getPrice());
         boolean isSuccess = productsService.addProduct(new ProductEntity(product.getName(), product.getPrice()));
@@ -54,7 +53,7 @@ public class RestService {
         return null;
     }
 
-    @PostMapping(path="/addOrder")
+    @PostMapping(path="/addorder")
     public OrderModel addOrder(@RequestBody OrderModel order) {
         System.out.printf("id:%d name:%s price:$%f%n", order.getId(), order.getProductName(), order.getPrice());
         boolean isSuccess = ordersService.addOrder(new OrderEntity(order.getOrderNo(), order.getProductName(), order.getPrice(), order.getQuantity()));
