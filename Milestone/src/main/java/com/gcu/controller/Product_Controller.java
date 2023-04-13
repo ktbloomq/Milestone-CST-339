@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gcu.business.ProductsBusinessService;
 import com.gcu.data.entity.ProductEntity;
@@ -34,7 +35,7 @@ public class Product_Controller {
     @GetMapping("/newItem")
     public String display(Model model) {
         model.addAttribute("productModel", new ProductModel());
-        model.addAttribute("title", "Products");
+        model.addAttribute("title", "Add Product");
         return "new_products";
     }
     
@@ -49,5 +50,44 @@ public class Product_Controller {
         
         model.addAttribute("title", "Products");
         return "redirect:/products";
+    }
+
+    @GetMapping("/update")
+    public String updateProduct(Model model) {
+        model.addAttribute("productModel", new ProductModel());
+        model.addAttribute("title", "Update Product");
+        return "update_product";
+    }
+    
+    @PostMapping("/updateProduct")
+    public String updateProduct(@Valid ProductModel productModel, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors() && !service.exists(productModel.getId())) {
+            model.addAttribute("title", "Update Product");
+            return "new_products";
+        }
+        System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
+        service.addProduct(new ProductEntity(productModel.getId(), productModel.getName(), productModel.getPrice()));
+        
+        model.addAttribute("title", "Products");
+        return "redirect:/products";
+    }
+
+    @GetMapping("/delete")
+    public String deleteProduct(Model model) {
+        // model.addAttribute("productModel", new ProductModel());
+        model.addAttribute("title", "Update Product");
+        return "delete_product";
+    }
+    
+    @PostMapping("/deleteProduct")
+    public String deleteProduct(@RequestParam long id) {
+      
+        System.out.println("deleting ID: " + id);
+        if(service.exists(id)) {
+            service.deleteProduct(id);
+            return "redirect:/products";
+        } else {
+            return "delete_product";
+        }
     }
 }
