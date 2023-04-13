@@ -3,60 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}">Document</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        th, td {
-            text-align: center;
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-        }
-        
+    <style>        
         .button-container {
             text-align: center;
             margin-top: 1rem;
-        }
-        
-        .add-new-item-button {
-            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div layout:fragment="content">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="display: none;"></th>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:if="${#lists.isEmpty(products)}">
-                    <td colspan="3" style="text-align: center;">No Orders Available</td>
-                </tr>
-                <tr th:each="product : ${products}">
-                    <td style="display: none;"><h5 th:text="${product.id}">null</h5></td>
-                    <td><h5 th:text="${product.name}">null</h5></td>
-                    <td><h5 th:text="${product.price}">null</h5></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div class="button-container">
-            <button onclick="location.href='../products/newItem'" type="button" class="btn btn-outline-primary add-new-item-button">Add New Product</button>
-            <button onclick="location.href='../products/update'" type="button" class="btn btn-outline-primary add-new-item-button">Update Existing</button>
-            <button onclick="location.href='../products/delete'" type="button" class="btn btn-outline-danger add-new-item-button">Delete Product</button>
+        <div class="container text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(products)}">
+                        <td colspan="3" style="text-align: center;">No Orders Available</td>
+                    </tr>
+                    <tr th:each="product : ${products}">
+                        <td><h5 th:text="${product.id}">null</h5></td>
+                        <td><h5 th:text="${product.name}">null</h5></td>
+                        <td><h5 th:text="${product.price}">null</h5></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="button-container">
+                <button onclick="location.href='../products/newItem'" type="button" class="btn btn-outline-primary">Add New Product</button>
+                <button onclick="location.href='../products/update'" type="button" class="btn btn-outline-primary">Update Existing</button>
+                <!-- <button onclick="location.href='../products/delete'" type="button" class="btn btn-outline-danger add-new-item-button">Delete Product</button> -->
+            </div>
         </div>
     </div>
 </body>
