@@ -60,13 +60,20 @@ public class Product_Controller {
     }
     
     @PostMapping("/updateProduct")
-    public String updateProduct(@Valid ProductModel productModel, BindingResult bindingResult, Model model) {
+    public String updateProduct(@Valid ProductModel productModel, boolean delete, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors() && !service.exists(productModel.getId())) {
             model.addAttribute("title", "Update Product");
             return "new_products";
         }
-        System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
-        service.addProduct(new ProductEntity(productModel.getId(), productModel.getName(), productModel.getPrice()));
+        
+        if(delete) {
+            System.out.println("deleting " + productModel.getId());
+            service.deleteProduct(productModel.getId());
+        } else {
+            System.out.printf("id:%d name:%s price:$%f%n", productModel.getId(), productModel.getName(), productModel.getPrice());
+            service.addProduct(new ProductEntity(productModel.getId(), productModel.getName(), productModel.getPrice()));
+        }
+
         
         model.addAttribute("title", "Products");
         return "redirect:/products";
