@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-@RequestMapping("/login")
 public class Login_Controller {
 
     @Autowired 
@@ -31,10 +30,10 @@ public class Login_Controller {
 	 * 
 	 * @return View name login
 	 */
-    @GetMapping("/")
+    @GetMapping("/login")
     public String display(Model model) {
         model.addAttribute("title", "Login Form");
-        model.addAttribute("loginModel", new LoginModel());
+        // model.addAttribute("loginModel", new LoginModel());
         return "login";
     }
     
@@ -47,38 +46,32 @@ public class Login_Controller {
      * 
      * @return  view name orders
      */
-    @PostMapping("/doLogin")
-    public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
+    // @PostMapping("/doLogin")
+    // public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
 
-        System.out.printf("username: %s password: %s%n", loginModel.getEmail(), loginModel.getPassword());
-        if(bindingResult.hasErrors()) {
-            model.addAttribute("title", "Login Form");
-            return "login";
-        }
+    //     System.out.printf("username: %s password: %s%n", loginModel.getEmail(), loginModel.getPassword());
+    //     if(bindingResult.hasErrors()) {
+    //         model.addAttribute("title", "Login Form");
+    //         return "login";
+    //     }
         
-        //Authenticate User
-        try {
-			if(!loginModel.authenticate()) {
-			    model.addAttribute("title", "Login Form");
-			    return "login";
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    //     //Authenticate User
+    //     try {
+	// 		if(!loginModel.authenticate()) {
+	// 		    model.addAttribute("title", "Login Form");
+	// 		    return "login";
+	// 		}
+	// 	} catch (SQLException e) {
+	// 		// TODO Auto-generated catch block
+	// 		e.printStackTrace();
+	// 	}
         
-        List<ProductModel> products = service.getProducts();
-        model.addAttribute("title", "My Products");
-        model.addAttribute("products", products);
+    //     List<ProductModel> products = service.getProducts();
+    //     model.addAttribute("title", "My Products");
+    //     model.addAttribute("products", products);
 
-        return "products";
-
-        // List<OrderModel> orders = service.getOrders();
-        
-        // model.addAttribute("title", "My Orders");
-        // model.addAttribute("orders", orders);
-        // return "orders";
-    }
+    //     return "products";
+    // }
     
     
     

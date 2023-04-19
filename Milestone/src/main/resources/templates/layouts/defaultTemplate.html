@@ -28,8 +28,11 @@
               </form>
       
               <div class="text-end">
-                  <button onclick="location.href='/login/'" type="button" class="btn btn-outline-primary me-2">Login</button>
+                  <button onclick="location.href='/login'" type="button" class="btn btn-outline-primary me-2">Login</button>
                   <button onclick="location.href='/registration/'" type="button" class="btn btn-primary">Sign-up</button>
+                  <form action="#" th:action="@{/logout}" method="post">
+                    <input type="submit" value="Log Out">
+                  </form>
               </div>
             </div>
           </header>
