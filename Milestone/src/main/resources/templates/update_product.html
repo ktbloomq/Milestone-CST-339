@@ -8,7 +8,7 @@
      <div layout:fragment="content">
             <form action="#" th:action="@{updateProduct}" th:object="${productModel}" method="post" style="max-width: 330px; padding: 15px;" class="m-auto">
                   <div class="form-floating">
-                        <input th:field="*{id}" type="text" id="inputId" class="form-control" placeholder="Product Name" style="margin:0.5rem 0rem" required>
+                        <input th:field="*{id}" type="text" id="inputId" class="form-control" placeholder="Product Id" style="margin:0.5rem 0rem" required>
                         <label for="inputId">Id</label>
                   </div>
                   <div class="form-floating">
@@ -20,7 +20,7 @@
                         <label for="inputPrice">Price</label>
                   </div>
                   <div class="my-2">
-                        <input type="checkbox" class="form-check-input" name="delete" id="delete" autocomplete="off">
+                        <input type="checkbox" class="form-check-input danger" name="delete" id="delete" autocomplete="off">
                         <label class="form-check-label text-danger" for="delete">Delete Product</label>
                   </div>
                   <button class="w-100 btn btn-lg btn-primary" type="submit">Update Product</button>
