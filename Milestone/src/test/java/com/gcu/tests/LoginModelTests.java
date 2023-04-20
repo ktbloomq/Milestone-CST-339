@@ -54,7 +54,7 @@ class LoginModelTests {
 		loginModel.setPassword("1234567890");
 		
 		try(Connection connection = DriverManager.getConnection(jdbcUrl,"root","root")) {
-	    	String query = "INSERT INTO customers (F_NAME, L_NAME, EMAIL, PASSWORD, ADDRESS, PHONE)"
+	    	String query = "INSERT INTO users (F_NAME, L_NAME, EMAIL, PASSWORD, ADDRESS, PHONE)"
 	    			+ "VALUES (?, ?, ?, ?, ?, ?);";
 	    	
 	    	PreparedStatement preparedStmt = connection.prepareStatement(query);

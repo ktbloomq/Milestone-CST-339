@@ -101,8 +101,8 @@ public class RestService {
             }
         }
 
-    // @PostMapping(path="/addCustomer")
-    // public void addCustomer(@RequestBody RegisterModel customer) {
-    //      customersService.addCustomer(new CustomerEntity(customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPassword(), null, null))
+    // @PostMapping(path="/addUser")
+    // public void addUser(@RequestBody RegisterModel user) {
+    //      usersService.addUser(new UserEntity(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), null, null))
     // }
 }

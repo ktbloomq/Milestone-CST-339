@@ -4,11 +4,20 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("customers")
-public class CustomerEntity {
+@Table("users")
+public class UserEntity {
 
     @Id
-    private long id;
+    private Long id;
+    
+    @Column("username")
+    private String username;
+
+    @Column("PASSWORD")
+    private String password;
+
+    @Column("enabled")
+    private boolean enabled;
 
     @Column("F_NAME")
     private String firstName;
@@ -18,9 +27,7 @@ public class CustomerEntity {
 
     @Column("EMAIL")
     private String email;
-    
-    @Column("PASSWORD")
-    private String password;
+
     
     @Column("ADDRESS")
     private String address;
@@ -28,36 +35,56 @@ public class CustomerEntity {
     @Column("PHONE")
     private String phone;
 
-    public CustomerEntity() {
+    public UserEntity() {
     }
 
-    public CustomerEntity(String firstName, String lastName, String email, String password, String address,
-            String phone) {
+    public UserEntity(String username, String password, boolean enabled, String firstName, String lastName,
+            String email, String address, String phone) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
         this.address = address;
         this.phone = phone;
     }
 
-    public CustomerEntity(long id, String firstName, String lastName, String email, String password, String address,
-            String phone) {
+    public UserEntity(Long id, String username, String password, boolean enabled, String firstName, String lastName,
+            String email, String address, String phone) {
         this.id = id;
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
         this.address = address;
         this.phone = phone;
     }
 
-    public long getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String getFirstName() {
@@ -84,14 +111,6 @@ public class CustomerEntity {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -108,5 +127,14 @@ public class CustomerEntity {
         this.phone = phone;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    
     
 }

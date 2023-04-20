@@ -58,7 +58,7 @@ public class LoginModel {
     	boolean flag = false;
     	try(Connection connection = DriverManager.getConnection(jdbcUrl,"root","root")) {
     		 Statement statement = connection.createStatement();
-	    	String query = "SELECT * fROM customers WHERE email='" + email + "' and password='" + password + "'";
+	    	String query = "SELECT * fROM users WHERE email='" + email + "' and password='" + password + "'";
 	    	ResultSet rs = statement.executeQuery(query);
 	    	while (rs.next()) 
 	    	{

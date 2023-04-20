@@ -12,6 +12,8 @@ public class RegisterModel {
     @Size(max = 32, message = "last name is too long")
     private String lastName;
 
+    private String username;
+
     @NotNull(message = "enter email")
     @Size(max = 32, message = "email is too long")
     private String email;
@@ -86,6 +88,14 @@ public class RegisterModel {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     
