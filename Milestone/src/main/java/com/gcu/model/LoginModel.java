@@ -1,12 +1,5 @@
 package com.gcu.model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -36,50 +29,50 @@ public class LoginModel {
     }
     
   //Authenticate user is in db
-    public boolean authenticate() throws SQLException 
-    {
+    // public boolean authenticate() throws SQLException 
+    // {
     	
     	
-    	/*if(getEmail().equals("example@example.com") && getPassword().equals("password123")) 
-    	{
-    		System.out.println("Successfully authenticated");
-    		return true;
-    	}
-    	else {
-    		System.out.println("No existing users found");
-    		return false;
-    	}*/
+    // 	/*if(getEmail().equals("example@example.com") && getPassword().equals("password123")) 
+    // 	{
+    // 		System.out.println("Successfully authenticated");
+    // 		return true;
+    // 	}
+    // 	else {
+    // 		System.out.println("No existing users found");
+    // 		return false;
+    // 	}*/
     	
     	
-    	String email = getEmail();
-    	String password = getPassword();
+    // 	String email = getEmail();
+    // 	String password = getPassword();
 
-    	String jdbcUrl = "jdbc:mysql://localhost:3306/cst339";
-    	boolean flag = false;
-    	try(Connection connection = DriverManager.getConnection(jdbcUrl,"root","root")) {
-    		 Statement statement = connection.createStatement();
-	    	String query = "SELECT * fROM users WHERE email='" + email + "' and password='" + password + "'";
-	    	ResultSet rs = statement.executeQuery(query);
-	    	while (rs.next()) 
-	    	{
-	    		String temail = rs.getString("email");
-	            String tpassword =  rs.getString("password");
-	            if ((email.equals(temail)) && (password.equals(tpassword))) {
+    // 	String jdbcUrl = "jdbc:mysql://localhost:3306/cst339";
+    // 	boolean flag = false;
+    // 	try(Connection connection = DriverManager.getConnection(jdbcUrl,"root","root")) {
+    // 		 Statement statement = connection.createStatement();
+	//     	String query = "SELECT * fROM users WHERE email='" + email + "' and password='" + password + "'";
+	//     	ResultSet rs = statement.executeQuery(query);
+	//     	while (rs.next()) 
+	//     	{
+	//     		String temail = rs.getString("email");
+	//             String tpassword =  rs.getString("password");
+	//             if ((email.equals(temail)) && (password.equals(tpassword))) {
 	
-	                System.out.println("Successfully authenticated");
-	                flag = true;
-	            }
-	    	} 
-	    	if(!flag) {
+	//                 System.out.println("Successfully authenticated");
+	//                 flag = true;
+	//             }
+	//     	} 
+	//     	if(!flag) {
 	    		
-	    		System.out.println("Please check Email and Password");
-	    	}
-	    	rs.close();
-    	}
-    	catch(SQLException sql) {
-    		 System.out.println(sql);
-    	}
-    	return flag;
+	//     		System.out.println("Please check Email and Password");
+	//     	}
+	//     	rs.close();
+    // 	}
+    // 	catch(SQLException sql) {
+    // 		 System.out.println(sql);
+    // 	}
+    // 	return flag;
     
-    }
+    // }
 }
