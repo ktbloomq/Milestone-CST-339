@@ -27,12 +27,12 @@
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
               </form>
       
-              <div class="text-end">
+              <div class="text-end d-flex">
                   <button onclick="location.href='/login'" type="button" class="btn btn-outline-primary me-2">Login</button>
-                  <button onclick="location.href='/registration/'" type="button" class="btn btn-primary">Sign-up</button>
-                  <form action="#" th:action="@{/logout}" method="post">
-                    <input type="submit" value="Log Out">
+                  <form action="#" th:action="@{/logout}" class="form-inline" method="post">
+                    <input type="submit" class="btn btn-outline-primary me-2" value="Log Out">
                   </form>
+                  <button onclick="location.href='/registration/'" type="button" class="btn btn-primary">Sign-up</button>
               </div>
             </div>
           </header>

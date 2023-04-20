@@ -20,8 +20,8 @@
                         <label for="inputPrice">Price</label>
                   </div>
                   <div class="my-2">
-                        <input type="checkbox" class="btn-check" name="delete" id="delete" autocomplete="off">
-                        <label class="w-100 btn btn-outline-danger" for="delete">Delete Product</label>
+                        <input type="checkbox" class="form-check-input" name="delete" id="delete" autocomplete="off">
+                        <label class="form-check-label text-danger" for="delete">Delete Product</label>
                   </div>
                   <button class="w-100 btn btn-lg btn-primary" type="submit">Update Product</button>
                   <div th:each="err : ${#fields.errors('*')}">
