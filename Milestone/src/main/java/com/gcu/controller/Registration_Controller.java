@@ -74,6 +74,6 @@ public class Registration_Controller {
                                             user.getAddress(), 
                                             user.getPhone()));
         authoritiesRepository.save(new AuthorityEntity(user.getUsername(),"ROLE_USER"));
-        return "redirect:/login/";
+        return "redirect:/login";
     }
 }
