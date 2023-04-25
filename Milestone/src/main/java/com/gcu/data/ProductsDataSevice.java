@@ -32,8 +32,8 @@ public class ProductsDataSevice implements DataAccessInterface<ProductEntity> {
     }
 
     @Override
-    public ProductEntity FindById(int id) {
-        return null;
+    public ProductEntity FindById(long id) {
+        return productsRepository.findById(id).get();
     }
 
     @Override

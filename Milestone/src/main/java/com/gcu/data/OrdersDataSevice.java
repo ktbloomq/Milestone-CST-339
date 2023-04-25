@@ -32,7 +32,7 @@ public class OrdersDataSevice implements DataAccessInterface<OrderEntity> {
     }
 
     @Override
-    public OrderEntity FindById(int id) {
+    public OrderEntity FindById(long id) {
         return null;
     }
 

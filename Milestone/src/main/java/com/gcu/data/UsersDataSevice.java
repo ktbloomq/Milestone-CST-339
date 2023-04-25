@@ -32,7 +32,7 @@ public class UsersDataSevice implements DataAccessInterface<UserEntity> {
     }
 
     @Override
-    public UserEntity FindById(int id) {
+    public UserEntity FindById(long id) {
         return null;
     }
 

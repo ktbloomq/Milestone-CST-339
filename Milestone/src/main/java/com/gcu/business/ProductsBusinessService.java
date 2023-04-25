@@ -30,6 +30,13 @@ public class ProductsBusinessService {
         return productsDomain;
     }
 
+    public ProductModel getProduct(long id) {
+        ProductEntity entity = service.FindById(id);
+        return new ProductModel(entity.getId(),
+            entity.getName(),
+            entity.getPrice());
+    }
+
     public boolean addProduct(ProductEntity product) {
         return service.create(product);
     }

@@ -3,7 +3,9 @@ package com.gcu.business;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +45,16 @@ public class RestService {
     //     list.setProducts(service.getProducts());
     //     return list;
     // }
+
+    @GetMapping(path="/getproduct/{id}")
+    public ResponseEntity<?> getProduct(@PathVariable long id) {
+        if(productsService.exists(id)) {
+            ProductModel product = productsService.getProduct(id);
+            return new ResponseEntity<ProductModel>(product, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @PostMapping(path="/addproduct")
     public ProductModel addProduct(@RequestBody ProductModel product) {
