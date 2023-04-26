@@ -47,7 +47,7 @@ public class RestService {
     // }
 
     @GetMapping(path="/getproduct/{id}")
-    public ResponseEntity<?> getProduct(@PathVariable long id) {
+    public ResponseEntity<ProductModel> getProduct(@PathVariable long id) {
         if(productsService.exists(id)) {
             ProductModel product = productsService.getProduct(id);
             return new ResponseEntity<ProductModel>(product, HttpStatus.OK);
