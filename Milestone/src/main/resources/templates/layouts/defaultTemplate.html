@@ -29,21 +29,20 @@
                 <img style="width:200px;height:75px;" th:src="@{/images/phones4U_thin.png}"/>
               </a>
       
-              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center">
                 <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Users</a></li>
                 <li><a onclick="location.href='/products'" style="cursor:pointer;" class="nav-link px-2 link-dark">Products</a></li>
               </ul>
       
-              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <form class="col-12 col-sm-auto mb-3 mb-sm-0 me-sm-3" role="search">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
               </form>
       
               <div class="text-end d-flex">
                   <button onclick="location.href='/login'" type="button" class="btn btn-outline-primary me-2">Login</button>
                   <form action="#" th:action="@{/logout}" class="form-inline" method="post">
-                    <input type="submit" class="btn btn-outline-primary me-2" value="Log Out">
+                    <input type="submit" class="btn btn-outline-primary me-2 h-100" value="Log Out">
                   </form>
                   <button onclick="location.href='/registration/'" type="button" class="btn btn-primary">Sign-up</button>
               </div>
