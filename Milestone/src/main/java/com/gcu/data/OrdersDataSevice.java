@@ -19,6 +19,11 @@ public class OrdersDataSevice implements DataAccessInterface<OrderEntity> {
         this.ordersRepository = ordersRepository;
     }
 
+    
+    /** 
+     * Returns all orders
+     * @return List<OrderEntity>
+     */
     @Override
     public List<OrderEntity> findAll() {
         List<OrderEntity> orders = new ArrayList<OrderEntity>();

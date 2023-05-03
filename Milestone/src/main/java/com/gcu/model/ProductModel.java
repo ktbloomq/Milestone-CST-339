@@ -25,6 +25,10 @@ public class ProductModel {
     }
 
     
+    
+    /** 
+     * @return long
+     */
     public long getId() {
         return id;
     }

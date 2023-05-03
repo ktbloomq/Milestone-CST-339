@@ -18,6 +18,10 @@ public class OrdersBusinessService {
         System.out.println("Hello from the OrdersBusinessService");
     }
 
+    
+    /** 
+     * @return List<OrderModel>
+     */
     public List<OrderModel> getOrders() {
         // service.create(new OrderEntity("example", "example", 70.0f, 10));
         List<OrderEntity> ordersEntity = service.findAll();

@@ -31,6 +31,10 @@ public class ProductEntity {
         this.price = price;
     }
 
+    
+    /** 
+     * @return long
+     */
     public long getId() {
         return id;
     }

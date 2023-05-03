@@ -12,6 +12,11 @@ public class RegistrationService {
 	@Autowired
 	UsersDataSevice service;
 
+	
+	/** 
+	 * @param user
+	 * @return UserEntity
+	 */
 	public UserEntity register(UserEntity user) {
 		//Add registerModel to database
 		service.create(user);

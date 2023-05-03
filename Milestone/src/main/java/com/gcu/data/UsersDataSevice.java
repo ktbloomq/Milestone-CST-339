@@ -19,6 +19,10 @@ public class UsersDataSevice implements DataAccessInterface<UserEntity> {
         this.usersRepository = usersRepository;
     }
 
+    
+    /** 
+     * @return List<UserEntity>
+     */
     @Override
     public List<UserEntity> findAll() {
         List<UserEntity> users = new ArrayList<UserEntity>();

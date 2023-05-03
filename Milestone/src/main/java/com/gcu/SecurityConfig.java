@@ -19,6 +19,10 @@ public class SecurityConfig {
 	@Autowired
 	DataSource dataSource;
 
+	
+	/** 
+	 * @return PasswordEncoder
+	 */
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

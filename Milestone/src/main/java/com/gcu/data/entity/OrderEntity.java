@@ -22,6 +22,10 @@ public class OrderEntity {
     @Column("QUANTITY")
     private int quantity;
 
+    
+    /** 
+     * @return long
+     */
     public long getId() {
         return id;
     }

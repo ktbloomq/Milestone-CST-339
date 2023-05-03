@@ -24,6 +24,10 @@ public class AuthorityEntity {
         this.authority = authority;
     }
 
+    
+    /** 
+     * @return long
+     */
     public long getId() {
         return id;
     }

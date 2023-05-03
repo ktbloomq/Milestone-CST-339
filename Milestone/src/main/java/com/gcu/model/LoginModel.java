@@ -13,6 +13,10 @@ public class LoginModel {
     @Size(min = 10, max = 32, message = "password must be between 10 and 32 characters")
     private String password;
 
+    
+    /** 
+     * @return String
+     */
     public String getEmail() {
         return email;
     }

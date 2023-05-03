@@ -9,6 +9,13 @@ import com.gcu.data.entity.ProductEntity;
 
 public class ProductRowMapper implements RowMapper<ProductEntity> {
 
+    
+    /** 
+     * @param rs
+     * @param rowNumber
+     * @return ProductEntity
+     * @throws SQLException
+     */
     @Override
     public ProductEntity mapRow(ResultSet rs, int rowNumber) throws SQLException {
         return new ProductEntity(rs.getLong("ID"),

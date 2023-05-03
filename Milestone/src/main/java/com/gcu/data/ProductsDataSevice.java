@@ -19,6 +19,10 @@ public class ProductsDataSevice implements DataAccessInterface<ProductEntity> {
         this.productsRepository = productsRepository;
     }
 
+    
+    /** 
+     * @return List<ProductEntity>
+     */
     @Override
     public List<ProductEntity> findAll() {
         List<ProductEntity> products = new ArrayList<ProductEntity>();

@@ -11,6 +11,10 @@ import com.gcu.business.ProductsBusinessService;
 @EnableJdbcRepositories("com.gcu.data.repository")
 public class SpringConfig {
     
+    
+    /** 
+     * @return OrdersBusinessService
+     */
     @Bean(name="ordersBusinessService", initMethod ="init", destroyMethod ="destroy")
     public OrdersBusinessService getOrdersBusiness() {
         return new OrdersBusinessService();

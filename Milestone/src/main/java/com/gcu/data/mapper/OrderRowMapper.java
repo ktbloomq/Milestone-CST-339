@@ -9,6 +9,13 @@ import com.gcu.data.entity.OrderEntity;
 
 public class OrderRowMapper implements RowMapper<OrderEntity> {
 
+    
+    /** 
+     * @param rs
+     * @param rowNumber
+     * @return OrderEntity
+     * @throws SQLException
+     */
     @Override
     public OrderEntity mapRow(ResultSet rs, int rowNumber) throws SQLException {
         return new OrderEntity(rs.getLong("ID"),

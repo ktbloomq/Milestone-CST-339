@@ -18,7 +18,11 @@ public class OrderModel {
 		
 	}
 
-	public long getId() {
+	
+    /** 
+     * @return long
+     */
+    public long getId() {
         return id;
     }
     public void setId(long id) {

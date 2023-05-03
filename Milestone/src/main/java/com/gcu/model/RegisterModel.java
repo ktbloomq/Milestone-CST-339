@@ -34,6 +34,10 @@ public class RegisterModel {
     @Size(min = 1, max = 64, message = "phone number must be between 10 and 11 characters")
     private String phone;
 
+    
+    /** 
+     * @return String
+     */
     public String getFirstName() {
         return firstName;
     }

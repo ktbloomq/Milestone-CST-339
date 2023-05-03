@@ -10,6 +10,10 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 public class OrderList {
     private List<OrderModel> orders = new ArrayList<OrderModel>();
 
+    
+    /** 
+     * @return List<OrderModel>
+     */
     @XmlElement(name="order")
     public List<OrderModel> getOrders() {
         return this.orders;

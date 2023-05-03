@@ -63,6 +63,10 @@ public class UserEntity {
         this.phone = phone;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getUsername() {
         return username;
     }

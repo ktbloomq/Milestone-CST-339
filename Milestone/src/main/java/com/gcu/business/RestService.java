@@ -34,6 +34,10 @@ public class RestService {
     @Autowired
     private OrdersBusinessService ordersService;
 
+    
+    /** 
+     * @return List<ProductModel>
+     */
     @GetMapping(path="/getproducts", produces={MediaType.APPLICATION_JSON_VALUE})
     public List<ProductModel> getProductsAsJson() {
         return productsService.getProducts();

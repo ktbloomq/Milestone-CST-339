@@ -24,6 +24,11 @@ public class Product_Controller {
     @Autowired 
     private ProductsBusinessService service;
 
+    
+    /** 
+     * @param model
+     * @return String
+     */
     @GetMapping("")
     public String productsPage(Model model) {
         List<ProductModel> products = service.getProducts();

@@ -9,6 +9,13 @@ import com.gcu.data.entity.UserEntity;
 
 public class UserRowMapper implements RowMapper<UserEntity> {
 
+    
+    /** 
+     * @param rs
+     * @param rowNumber
+     * @return UserEntity
+     * @throws SQLException
+     */
     @Override
     public UserEntity mapRow(ResultSet rs, int rowNumber) throws SQLException {
         return new UserEntity(rs.getString("username"),
