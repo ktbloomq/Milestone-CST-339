@@ -21,13 +21,22 @@ public class SecurityConfig {
 
 	
 	/** 
-	 * @return PasswordEncoder
+	 * Uses the spring security framework to encode the password
+	 * 
+	 * @return PasswordEncoder returns an instance of BCryptPasswordEncoder
 	 */
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
+	
+	/** 
+	 * Filters sites users can access and can't without authentication 
+	 * 
+	 * @param HttpSecurity allows for specific http request
+	 * @return securityFilterChain returns an http.build object
+	 */
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.httpBasic().and()
@@ -43,7 +52,14 @@ public class SecurityConfig {
 
 		return http.build();
 	}
-
+	
+	/** 
+	 * Filters sites users can access and can't without authentication 
+	 * 
+	 * @param DataSource Connection to sql database
+	 * @param PasswordEncoder encoded password
+	 * @return jdbcUserDetailsManager returns a new instance of jdbcUserDetailsManager so users can be updated/deleted
+	 */
 	@Bean
 	public JdbcUserDetailsManager userDetailsService(DataSource dataSource, PasswordEncoder encoder) {
 		// UserDetails user =

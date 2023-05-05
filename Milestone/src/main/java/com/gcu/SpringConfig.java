@@ -12,14 +12,21 @@ import com.gcu.business.ProductsBusinessService;
 public class SpringConfig {
     
     
-    /** 
-     * @return OrdersBusinessService
+	/** 
+     * Used to create a bean for orderBusinessService
+     * 
+     * @return ordersBusinessService returns productBusinessService instance
      */
     @Bean(name="ordersBusinessService", initMethod ="init", destroyMethod ="destroy")
     public OrdersBusinessService getOrdersBusiness() {
         return new OrdersBusinessService();
     }
 
+    /** 
+     * Used to create a bean for productBusinessService
+     * 
+     * @return ProductsBusinessService returns productBusinessService instance
+     */
     @Bean(name="productsBusinessService", initMethod ="init", destroyMethod ="destroy")
     public ProductsBusinessService getProductsBusiness() {
         return new ProductsBusinessService();

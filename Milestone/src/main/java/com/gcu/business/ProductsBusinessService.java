@@ -14,13 +14,19 @@ public class ProductsBusinessService {
     @Autowired
     private ProductsDataSevice service;
 
+    
+    /**
+     * Used to test the ProudctsBusinessService class
+     */
     public void test() {
         System.out.println("Hello from the OrdersBusinessService");
     }
 
     
     /** 
-     * @return List<ProductModel>
+     * Get's the products from the product entity
+     * 
+     * @return List<ProductModel> returns a listed product model object
      */
     public List<ProductModel> getProducts() {
         // service.create(new ProductEntity("example", 70.1f));
@@ -34,6 +40,11 @@ public class ProductsBusinessService {
         return productsDomain;
     }
 
+    /** 
+     * Get's the product based on id
+     * 
+     * @return ProductModel returns product based of the id
+     */
     public ProductModel getProduct(long id) {
         ProductEntity entity = service.FindById(id);
         return new ProductModel(entity.getId(),
@@ -41,22 +52,44 @@ public class ProductsBusinessService {
             entity.getPrice());
     }
 
+    /** 
+     * Adds the product to ProductDataService
+     * 
+     * @param ProductEntity the product to be added
+     */
     public boolean addProduct(ProductEntity product) {
         return service.create(product);
     }
 
+    
+    /** 
+     * Initialize the ProductBusinessService
+     */
     public void init() {
         System.out.println("Initializing ProductsBusinessService :)");
     }
 
+    /** 
+     * Destroy the ProductBusinessService
+     */
     public void destroy() {
         System.out.println("Destroying ProductsBusinessService :(");
     }
 
+    /** 
+     * Used to check if the product exists already in the ProductDataService
+     * 
+     * @param long the id of the product
+     */
     public boolean exists(long id) {
         return service.existsById(id);
     }
 
+    /** 
+     * Deletes the product from ProductDataService
+     * 
+     * @param long the id of the product
+     */
     public void deleteProduct(long id) {
         service.deleteById(id);
     }
