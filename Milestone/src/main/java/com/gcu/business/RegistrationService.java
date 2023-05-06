@@ -11,11 +11,12 @@ public class RegistrationService {
 	
 	@Autowired
 	UsersDataSevice service;
-
 	
 	/** 
-	 * @param user
-	 * @return UserEntity
+	 * Creating a user within the UsersDataService
+	 * 
+	 * @param UserEntity the user were creating
+	 * @return UserEntity returning null because we can create the user by the .create command
 	 */
 	public UserEntity register(UserEntity user) {
 		//Add registerModel to database

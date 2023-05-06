@@ -25,10 +25,12 @@ public class Product_Controller {
     private ProductsBusinessService service;
 
     
-    /** 
-     * @param model
-     * @return String
-     */
+    /**
+	 * Displays the products page
+	 * 
+	 * @param model Model to bind to the view
+	 * @return String the page
+	 */
     @GetMapping("")
     public String productsPage(Model model) {
         List<ProductModel> products = service.getProducts();
@@ -37,6 +39,12 @@ public class Product_Controller {
         return "products";
     }
 
+    /**
+	 * Displays creating a new product page
+	 * 
+	 * @param model Model to bind to the view
+	 * @return String the page
+	 */
     @GetMapping("/newItem")
     public String display(Model model) {
         model.addAttribute("productModel", new ProductModel());
@@ -44,6 +52,16 @@ public class Product_Controller {
         return "new_products";
     }
     
+    
+    /**
+   	 * Displays the error within the product page when trying to create a product
+   	 * 
+   	 * @param ProductModel the an instance of the product model
+   	 * @param BindingResult binds the data
+   	 * @Model Model model to bind to the view
+   	 * 
+   	 * @return String redirect url
+   	 */
     @PostMapping("/createItem")
     public String createItem(@Valid ProductModel productModel, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
@@ -57,6 +75,13 @@ public class Product_Controller {
         return "redirect:/products";
     }
 
+    /**
+   	 * Display the updating product page
+   	 * 
+   	 * @param model Model to bind to the view
+   	 * 
+   	 * @return String the page
+   	 */
     @GetMapping("/update")
     public String updateProduct(Model model) {
         model.addAttribute("productModel", new ProductModel());
@@ -64,6 +89,16 @@ public class Product_Controller {
         return "update_product";
     }
     
+    /**
+   	 * Displays the error within the product page when trying to update a product
+   	 * 
+   	 * @param ProductModel 
+   	 * @param Boolean true means delete false means to keep
+   	 * @param BindingResult binds the data
+   	 * @Model Model model to bind to the view
+   	 * 
+   	 * @return String redirect url
+   	 */
     @PostMapping("/updateProduct")
     public String updateProduct(@Valid ProductModel productModel, boolean delete, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors() && !service.exists(productModel.getId())) {
@@ -84,6 +119,13 @@ public class Product_Controller {
         return "redirect:/products";
     }
 
+    /**
+   	 * deletes a product based on the id
+   	 * 
+   	 * @param model Model to bind to the view
+   	 * 
+   	 * @return String the page
+   	 */
     @GetMapping("/delete")
     public String deleteProduct(Model model) {
         // model.addAttribute("productModel", new ProductModel());
@@ -91,6 +133,15 @@ public class Product_Controller {
         return "delete_product";
     }
     
+    
+    /**
+   	 * Displays the error within the product page when trying to delete a product
+   	 * 
+   	 * @param Long the id of the product
+   	 * @Model Model model to bind to the view
+   	 * 
+   	 * @return String redirect url
+   	 */
     @PostMapping("/deleteProduct")
     public String deleteProduct(@RequestParam long id) {
       

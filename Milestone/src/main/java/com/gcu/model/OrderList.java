@@ -12,13 +12,21 @@ public class OrderList {
 
     
     /** 
+     * returns all orders
+     * 
      * @return List<OrderModel>
      */
     @XmlElement(name="order")
     public List<OrderModel> getOrders() {
         return this.orders;
     }
-
+    
+    
+    /** 
+     * set all orders
+     * 
+     * @param List<OrderModel> Set orders within the list
+     */
     public void setOrders(List<OrderModel> orders) {
         this.orders = orders;
     }

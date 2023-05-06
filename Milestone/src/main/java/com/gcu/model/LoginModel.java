@@ -15,19 +15,38 @@ public class LoginModel {
 
     
     /** 
-     * @return String
+     * Gets the email of the users login credentials
+     * 
+     * @return String returns users email
      */
     public String getEmail() {
         return email;
     }
+    
+    /** 
+     * Sets the email of the users login credentials
+     * 
+     * @param String set users email
+     */
     public void setEmail (String email) {
         this.email = email;
     }
 
+    /** 
+     * Gets the password of the users login credentials
+     * 
+     * @return String returns users password
+     */
     public String getPassword() {
         return password;
     }
 
+    
+    /** 
+     * Sets the password of the users login credentials
+     * 
+     * @Param String sets users password
+     */
     public void setPassword(String password) {
         this.password = password;
     }

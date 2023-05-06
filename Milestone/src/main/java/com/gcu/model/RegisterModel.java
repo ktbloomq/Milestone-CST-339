@@ -36,68 +36,146 @@ public class RegisterModel {
 
     
     /** 
+     * return first name of the registered user
+     * 
      * @return String
      */
     public String getFirstName() {
         return firstName;
     }
 
+    /** 
+     * sets firstName of registered user
+     * 
+     * @param String
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /** 
+     * return last name of the registered user
+     * 
+     * @return String
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /** 
+     * sets lastName of registered user
+     * 
+     * @param String
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /** 
+     * return email of the registered user
+     * 
+     * @return String
+     */
     public String getEmail() {
         return email;
     }
 
+    /** 
+     * sets email of registered user
+     * 
+     * @param String
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /** 
+     * return password of the registered user
+     * 
+     * @return String
+     */
     public String getPassword() {
         return password;
     }
 
+    /** 
+     * sets ConfirmPassword of registered user
+     * 
+     * @param String
+     */
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
 
+    
+    /** 
+     * return ConfirmPassword of the registered user
+     * 
+     * @return String
+     */
     public String getConfirmPassword() {
         return confirmPassword;
     }
 
+    /** 
+     * sets password of registered user
+     * 
+     * @param String
+     */
     public void setPassword(String password) {
         this.password = password;
     }
     
+    /** 
+     * return address of the registered user
+     * 
+     * @return String
+     */
     public String getAddress() {
         return address;
     }
 
+    /** 
+     * sets address of registered user
+     * 
+     * @param String
+     */
     public void setAddress(String address) {
         this.address = address;
     }
     
+    /** 
+     * return phone num of the registered user
+     * 
+     * @return String
+     */
     public String getPhone() {
         return phone;
     }
 
+    /** 
+     * sets phone num of registered user
+     * 
+     * @param String
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /** 
+     * return username of the registered user
+     * 
+     * @return String
+     */
     public String getUsername() {
         return username;
     }
 
+    /** 
+     * sets username of registered user
+     * 
+     * @param String
+     */
     public void setUsername(String username) {
         this.username = username;
     }

@@ -11,6 +11,8 @@ public class ProductRowMapper implements RowMapper<ProductEntity> {
 
     
     /** 
+     * Maps the rows for the products
+     * 
      * @param rs
      * @param rowNumber
      * @return ProductEntity

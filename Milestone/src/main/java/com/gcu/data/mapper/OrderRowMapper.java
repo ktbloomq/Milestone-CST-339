@@ -11,6 +11,8 @@ public class OrderRowMapper implements RowMapper<OrderEntity> {
 
     
     /** 
+     * Maps the rows for the orders
+     * 
      * @param rs
      * @param rowNumber
      * @return OrderEntity

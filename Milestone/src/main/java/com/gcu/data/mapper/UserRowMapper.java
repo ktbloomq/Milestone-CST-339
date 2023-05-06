@@ -11,6 +11,8 @@ public class UserRowMapper implements RowMapper<UserEntity> {
 
     
     /** 
+     * Maps the rows for the users
+     * 
      * @param rs
      * @param rowNumber
      * @return UserEntity
